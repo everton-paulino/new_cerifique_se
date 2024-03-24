@@ -13,9 +13,12 @@ namespace Certifiquese_WF
 {
     public partial class Form1 : Form
     {
+        
         public Form1()
         {
             InitializeComponent();
+
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -34,16 +37,29 @@ namespace Certifiquese_WF
 
         private void button4_Click(object sender, EventArgs e)
         {
+            
+
             var lista = new Listas();
-            lista.NomedoFuncionario = "Sarah Andrea Moraes";
-            lista.NomedoCurso = "NR 5 - Trabalho em Altura";
-            lista.NomeInstrutor = "José Mané da Silva";
-            lista.DatadoCurso = "01/03/2024";
-            lista.LocalidadedoCurso = "São Paulo";
+            lista.NomedoFuncionario = textBox1.Text;
+            lista.NomedoCurso = textBox2.Text;
+            lista.NomeInstrutor = textBox4.Text;
+            lista.Documento = textBox3.Text;
+            lista.DatadoCurso = textBox5.Text;
+            lista.LocalidadedoCurso = textBox6.Text;
 
             var collectionLista = Conn.AbrirColecaoListas();
 
             collectionLista.InsertOne(lista);
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

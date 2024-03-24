@@ -26,6 +26,7 @@ namespace Certifiquese_WF
         public bool IsActive { get; set; }
         public string DatadoCurso { get; set; }
         public string NomedoFuncionario { get; set; }
+        public string Documento { get; set; }
         public string NomedoCurso { get; set; }
         public string NomeInstrutor { get; set; }
         public string LocalidadedoCurso { get; set; }
