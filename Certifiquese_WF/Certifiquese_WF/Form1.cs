@@ -51,6 +51,8 @@ namespace Certifiquese_WF
 
             collectionLista.InsertOne(lista);
 
+            Close();
+
         }
 
         private void label5_Click(object sender, EventArgs e)
@@ -61,6 +63,19 @@ namespace Certifiquese_WF
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            /*
+                if (dataGridView1.Rows.Count >0 )
+            {
+                var id = dataGridView1.CurrentRow.Cells["Id"].Value.ToString()!;
+
+                using var frm = new Form1(id, Operacao.Consultar);
+                frm.ShowDialog();
+            }
+               */
         }
     }
 }
