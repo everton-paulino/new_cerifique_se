@@ -46,7 +46,7 @@ namespace Certifiquese_WF
         {
             if (dataGridView1.Rows.Count > 0)
             {
-                var id = dataGridView1.CurrentRow.Cells["Id"].Value.ToString();
+                var id = dataGridView1.CurrentRow.Cells["Key"].Value.ToString();
 
                 using (var frm = new FrmDados(id, Operacao.Consultar)) frm.ShowDialog();
             }
