@@ -15,6 +15,7 @@ namespace Certifiquese_WF
 
         public static IMongoCollection<Listas> AbrirColecaoListas()
         {
+
             var cli = new MongoClient(Conn.Server);
             var db = cli.GetDatabase(Conn.Db);
             return db.GetCollection<Listas>(Conn.CollectionListas);

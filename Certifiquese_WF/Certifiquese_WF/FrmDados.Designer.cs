@@ -184,7 +184,7 @@ namespace Certifiquese_WF
             // 
             // btnAlterar
             // 
-            this.btnAlterar.Location = new System.Drawing.Point(434, 382);
+            this.btnAlterar.Location = new System.Drawing.Point(443, 382);
             this.btnAlterar.Name = "btnAlterar";
             this.btnAlterar.Size = new System.Drawing.Size(75, 23);
             this.btnAlterar.TabIndex = 16;

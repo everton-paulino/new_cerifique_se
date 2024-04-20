@@ -8,6 +8,7 @@ namespace Certifiquese_WF
 {
     public enum Operacao
     {
+
         Consultar = 0,
         Alterar = 1,
         Adicionar = 2,
