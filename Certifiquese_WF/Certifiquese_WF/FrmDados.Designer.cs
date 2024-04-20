@@ -45,6 +45,7 @@ namespace Certifiquese_WF
             this.btnSalvar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Key = new System.Windows.Forms.Label();
+            this.btnAlterar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtDataCurso
@@ -181,11 +182,23 @@ namespace Certifiquese_WF
             this.Key.TabIndex = 15;
             this.Key.Text = "ID";
             // 
+            // btnAlterar
+            // 
+            this.btnAlterar.Location = new System.Drawing.Point(434, 382);
+            this.btnAlterar.Name = "btnAlterar";
+            this.btnAlterar.Size = new System.Drawing.Size(75, 23);
+            this.btnAlterar.TabIndex = 16;
+            this.btnAlterar.Text = "Alterar";
+            this.btnAlterar.UseVisualStyleBackColor = true;
+            this.btnAlterar.Visible = false;
+            this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
+            // 
             // FrmDados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.Key);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelLocalidade);
@@ -227,5 +240,6 @@ namespace Certifiquese_WF
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label Key;
+        private System.Windows.Forms.Button btnAlterar;
     }
 }

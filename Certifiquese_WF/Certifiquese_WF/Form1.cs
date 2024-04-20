@@ -20,11 +20,7 @@ namespace Certifiquese_WF
             InitializeComponent();            
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+      
         private void Form1_Load(object sender, EventArgs e)
         {
             var collectionLista = Conn.AbrirColecaoListas();
@@ -73,6 +69,9 @@ namespace Certifiquese_WF
 
         }
 
-        
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

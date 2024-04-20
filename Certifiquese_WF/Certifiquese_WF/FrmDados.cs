@@ -43,8 +43,8 @@ namespace Certifiquese_WF
             else if (_operacao == Operacao.Alterar)
             {
                 MostrarDados();
-
-                btnSalvar.Visible = true;
+                _listas.Updated = DateTime.Now;
+                btnAlterar.Visible = true;
             }
 
             else if (_operacao == Operacao.Excluir)
@@ -53,6 +53,8 @@ namespace Certifiquese_WF
                 BloquearControles(true);
                 btnExcluir.Visible = true;
             }
+
+
         }
 
         private void MostrarDados()
@@ -97,24 +99,48 @@ namespace Certifiquese_WF
             var collectionLista = Conn.AbrirColecaoListas();
 
             
-            if (_operacao == Operacao.Adicionar)
+            collectionLista.InsertOne(lista);
 
-                collectionLista.InsertOne(lista);
-
-            
-            else if (_operacao == Operacao.Alterar)
-            {
-                var filter = Builders<Listas>.Filter.Eq(x => x.Key, lista.Key);
-                collectionLista.ReplaceOne(filter, _listas);
-            }
+            MessageBox.Show("Adicionado Com Sucesso");
 
             Close();
+
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
+            
             var collectionLista = Conn.AbrirColecaoListas();
             collectionLista.DeleteOne(p => p.Key == _listas.Key);
+
+            MessageBox.Show("Excluido com Sucesso");
+
+            Close();
+        }
+
+
+        private void btnAlterar_Click(object sender, EventArgs e)
+        {            
+                var lista = new Listas();
+
+                lista.NomedoFuncionario = txtNomeFuncionario.Text;
+                lista.NomedoCurso = txtCurso.Text;
+                lista.NomeInstrutor = txtInstrutor.Text;
+                lista.Documento = txtCpf.Text;
+                lista.DatadoCurso = txtDataCurso.Text;
+                lista.LocalidadedoCurso = txtLocalidade.Text;
+
+
+                var collectionLista = Conn.AbrirColecaoListas();
+
+                var filter = Builders<Listas>.Filter.Eq(x => x.Key, lista.Key);
+
+                collectionLista.ReplaceOne(filter, lista);
+
+                MessageBox.Show("Alterado com Sucesso");
+
+                Close();
+
         }
     }
 }
