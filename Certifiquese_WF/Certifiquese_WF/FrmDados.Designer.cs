@@ -43,6 +43,8 @@ namespace Certifiquese_WF
             this.labelLocalidade = new System.Windows.Forms.Label();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.Key = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // txtDataCurso
@@ -150,6 +152,7 @@ namespace Certifiquese_WF
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Visible = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSalvar
             // 
@@ -162,11 +165,29 @@ namespace Certifiquese_WF
             this.btnSalvar.Visible = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(113, 40);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(100, 20);
+            this.textBox1.TabIndex = 14;
+            // 
+            // Key
+            // 
+            this.Key.AutoSize = true;
+            this.Key.Location = new System.Drawing.Point(112, 24);
+            this.Key.Name = "Key";
+            this.Key.Size = new System.Drawing.Size(18, 13);
+            this.Key.TabIndex = 15;
+            this.Key.Text = "ID";
+            // 
             // FrmDados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.Key);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.labelLocalidade);
             this.Controls.Add(this.labelInstrutor);
             this.Controls.Add(this.labelCurso);
@@ -179,8 +200,8 @@ namespace Certifiquese_WF
             this.Controls.Add(this.txtCpf);
             this.Controls.Add(this.txtNomeFuncionario);
             this.Controls.Add(this.txtDataCurso);
-            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnExcluir);
+            this.Controls.Add(this.btnSalvar);
             this.Name = "FrmDados";
             this.Text = "FrmDados";
             this.ResumeLayout(false);
@@ -204,5 +225,7 @@ namespace Certifiquese_WF
         private System.Windows.Forms.Label labelLocalidade;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnSalvar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label Key;
     }
 }

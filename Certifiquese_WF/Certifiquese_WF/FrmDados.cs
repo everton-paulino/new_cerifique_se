@@ -39,6 +39,20 @@ namespace Certifiquese_WF
 
                 BloquearControles(true);                
             }
+
+            else if (_operacao == Operacao.Alterar)
+            {
+                MostrarDados();
+
+                btnSalvar.Visible = true;
+            }
+
+            else if (_operacao == Operacao.Excluir)
+            {
+                MostrarDados();
+                BloquearControles(true);
+                btnExcluir.Visible = true;
+            }
         }
 
         private void MostrarDados()
@@ -46,7 +60,8 @@ namespace Certifiquese_WF
             var filter = Builders<Listas>.Filter.Eq(x => x.Key, _listas.Key);
             var collectionListas = Conn.AbrirColecaoListas();
             _listas = collectionListas.Find(filter).FirstOrDefault();
-
+            
+            textBox1.Text = _listas.Key;
             txtNomeFuncionario.Text = _listas.NomedoFuncionario;
             txtCurso.Text = _listas.NomedoCurso;
             txtInstrutor.Text = _listas.NomeInstrutor;
@@ -58,6 +73,7 @@ namespace Certifiquese_WF
         private void BloquearControles(bool travar)
         {
             travar = !travar;
+            
             txtNomeFuncionario.Enabled = travar;
             txtCurso.Enabled = travar;
             txtInstrutor.Enabled = travar;
@@ -69,6 +85,8 @@ namespace Certifiquese_WF
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             var lista = new Listas();
+
+            
             lista.NomedoFuncionario = txtNomeFuncionario.Text;
             lista.NomedoCurso = txtCurso.Text;
             lista.NomeInstrutor = txtInstrutor.Text;
@@ -78,9 +96,28 @@ namespace Certifiquese_WF
 
             var collectionLista = Conn.AbrirColecaoListas();
 
-            collectionLista.InsertOne(lista);
+            
+            if (_operacao == Operacao.Adicionar)
+
+                collectionLista.InsertOne(lista);
+
+            
+            else if (_operacao == Operacao.Alterar)
+            {
+                var filter = Builders<Listas>.Filter.Eq(x => x.Key, lista.Key);
+                collectionLista.ReplaceOne(filter, _listas);
+            }    
+
+           
 
             Close();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            var collectionLista = Conn.AbrirColecaoListas();
+            collectionLista.DeleteOne(p => p.Key == _listas.Key);
+                        
         }
     }
 }

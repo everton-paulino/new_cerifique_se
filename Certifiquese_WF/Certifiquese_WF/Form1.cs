@@ -1,4 +1,5 @@
-﻿using MongoDB.Driver;
+﻿using MongoDB.Bson;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,9 +17,7 @@ namespace Certifiquese_WF
         
         public Form1()
         {
-            InitializeComponent();
-
-            
+            InitializeComponent();            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -52,5 +51,28 @@ namespace Certifiquese_WF
             }
 
         }
+
+        private void alterar_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                var id = dataGridView1.CurrentRow.Cells["Key"].Value.ToString();
+
+                using (var frm = new FrmDados(id, Operacao.Alterar)) frm.ShowDialog();
+            }
+        }
+
+        private void excluir_Click(object sender, EventArgs e)
+        {
+            if (dataGridView1.Rows.Count > 0)
+            {
+                var id = dataGridView1.CurrentRow.Cells["Key"].Value.ToString();
+
+                using (var frm = new FrmDados(id, Operacao.Excluir)) frm.ShowDialog();
+            }
+
+        }
+
+        
     }
 }

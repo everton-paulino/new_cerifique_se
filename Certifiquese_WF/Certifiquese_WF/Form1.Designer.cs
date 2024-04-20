@@ -44,6 +44,9 @@ namespace Certifiquese_WF
             this.alterar = new System.Windows.Forms.Button();
             this.consultar = new System.Windows.Forms.Button();
             this.excluir = new System.Windows.Forms.Button();
+            this.txtDescricao = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.menuStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -138,9 +141,9 @@ namespace Certifiquese_WF
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(31, 126);
+            this.dataGridView1.Location = new System.Drawing.Point(31, 156);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(645, 389);
+            this.dataGridView1.Size = new System.Drawing.Size(636, 389);
             this.dataGridView1.TabIndex = 14;
             // 
             // alterar
@@ -151,7 +154,7 @@ namespace Certifiquese_WF
             this.alterar.TabIndex = 21;
             this.alterar.Text = "Alterar";
             this.alterar.UseVisualStyleBackColor = true;
-            
+            this.alterar.Click += new System.EventHandler(this.alterar_Click);
             // 
             // consultar
             // 
@@ -171,12 +174,42 @@ namespace Certifiquese_WF
             this.excluir.TabIndex = 23;
             this.excluir.Text = "Excluir";
             this.excluir.UseVisualStyleBackColor = true;
+            this.excluir.Click += new System.EventHandler(this.excluir_Click);
+            // 
+            // txtDescricao
+            // 
+            this.txtDescricao.Location = new System.Drawing.Point(31, 118);
+            this.txtDescricao.Name = "txtDescricao";
+            this.txtDescricao.Size = new System.Drawing.Size(363, 20);
+            this.txtDescricao.TabIndex = 24;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(28, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Descrição";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(436, 118);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(78, 20);
+            this.btnBuscar.TabIndex = 26;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 603);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.excluir);
             this.Controls.Add(this.consultar);
             this.Controls.Add(this.alterar);
@@ -213,6 +246,9 @@ namespace Certifiquese_WF
         private System.Windows.Forms.Button alterar;
         private System.Windows.Forms.Button consultar;
         private System.Windows.Forms.Button excluir;
+        private System.Windows.Forms.TextBox txtDescricao;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }
 
