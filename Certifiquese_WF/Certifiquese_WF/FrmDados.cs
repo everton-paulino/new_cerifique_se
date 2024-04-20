@@ -106,9 +106,7 @@ namespace Certifiquese_WF
             {
                 var filter = Builders<Listas>.Filter.Eq(x => x.Key, lista.Key);
                 collectionLista.ReplaceOne(filter, _listas);
-            }    
-
-           
+            }
 
             Close();
         }
@@ -117,7 +115,6 @@ namespace Certifiquese_WF
         {
             var collectionLista = Conn.AbrirColecaoListas();
             collectionLista.DeleteOne(p => p.Key == _listas.Key);
-                        
         }
     }
 }
