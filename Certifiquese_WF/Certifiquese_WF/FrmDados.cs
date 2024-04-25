@@ -43,7 +43,6 @@ namespace Certifiquese_WF
             else if (_operacao == Operacao.Alterar)
             {
                 MostrarDados();
-                _listas.Updated = DateTime.Now;
                 btnAlterar.Visible = true;
             }
 
@@ -124,6 +123,8 @@ namespace Certifiquese_WF
         {            
                 var lista = new Listas();
 
+                lista.Key = textBox1.Text;
+                lista.Updated = DateTime.Now;
                 lista.NomedoFuncionario = txtNomeFuncionario.Text;
                 lista.NomedoCurso = txtCurso.Text;
                 lista.NomeInstrutor = txtInstrutor.Text;
