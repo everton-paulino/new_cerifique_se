@@ -1,4 +1,8 @@
-﻿using MongoDB.Bson;
+﻿using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using MongoDB.Bson;
 using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
@@ -74,5 +78,8 @@ namespace Certifiquese_WF
             
             Close();
         }
+
+       
+        
     }
 }

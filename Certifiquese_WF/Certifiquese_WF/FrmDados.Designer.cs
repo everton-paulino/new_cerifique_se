@@ -46,6 +46,7 @@ namespace Certifiquese_WF
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.Key = new System.Windows.Forms.Label();
             this.btnAlterar = new System.Windows.Forms.Button();
+            this.btn_GerarPdf = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtDataCurso
@@ -61,6 +62,7 @@ namespace Certifiquese_WF
             this.txtNomeFuncionario.Name = "txtNomeFuncionario";
             this.txtNomeFuncionario.Size = new System.Drawing.Size(372, 20);
             this.txtNomeFuncionario.TabIndex = 1;
+            this.txtNomeFuncionario.TextChanged += new System.EventHandler(this.txtNomeFuncionario_TextChanged);
             // 
             // txtCpf
             // 
@@ -193,11 +195,22 @@ namespace Certifiquese_WF
             this.btnAlterar.Visible = false;
             this.btnAlterar.Click += new System.EventHandler(this.btnAlterar_Click);
             // 
+            // btn_GerarPdf
+            // 
+            this.btn_GerarPdf.Location = new System.Drawing.Point(560, 382);
+            this.btn_GerarPdf.Name = "btn_GerarPdf";
+            this.btn_GerarPdf.Size = new System.Drawing.Size(91, 22);
+            this.btn_GerarPdf.TabIndex = 17;
+            this.btn_GerarPdf.Text = "Gerar PDF";
+            this.btn_GerarPdf.UseVisualStyleBackColor = true;
+            this.btn_GerarPdf.Click += new System.EventHandler(this.btn_GerarPdf_Click);
+            // 
             // FrmDados
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btn_GerarPdf);
             this.Controls.Add(this.btnAlterar);
             this.Controls.Add(this.Key);
             this.Controls.Add(this.textBox1);
@@ -241,5 +254,6 @@ namespace Certifiquese_WF
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label Key;
         private System.Windows.Forms.Button btnAlterar;
+        private System.Windows.Forms.Button btn_GerarPdf;
     }
 }

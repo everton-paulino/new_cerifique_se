@@ -1,4 +1,8 @@
-﻿using MongoDB.Driver;
+﻿using iText.Kernel.Geom;
+using iText.Kernel.Pdf;
+using iText.Layout;
+using iText.Layout.Element;
+using MongoDB.Driver;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -142,6 +146,32 @@ namespace Certifiquese_WF
                 MessageBox.Show("Alterado com Sucesso");
 
                 Close();
+
+        }
+
+        private void btn_GerarPdf_Click(object sender, EventArgs e)
+        {
+            GerarPdf();
+        }
+
+        private void GerarPdf()
+        {
+            var arquivo = @"C:\Windows\Temp\certificado.pdf";
+
+            using (PdfWriter wPdf = new PdfWriter(arquivo, new WriterProperties().SetPdfVersion(PdfVersion.PDF_2_0)))
+            {
+                var pdfDocument = new PdfDocument(wPdf);
+
+                var document = new Document(pdfDocument, PageSize.A4);
+                document.Add(new Paragraph("Lorem Ipsum é simplesmente um texto fictício da indústria de impressão e composição tipográfica. Lorem Ipsum tem sido o texto fictício padrão da indústria desde 1500, quando um impressor desconhecido pegou uma prova de tipos e a misturou para fazer um livro de espécimes de tipos. Ela sobreviveu não apenas a cinco séculos, mas também ao salto para a composição tipográfica eletrônica, permanecendo essencialmente inalterada. Foi popularizado na década de 1960 com o lançamento de folhas Letraset contendo passagens de Lorem Ipsum e, mais recentemente, com software de editoração eletrônica como Aldus PageMaker, incluindo versões de Lorem Ipsum."));
+                document.Close();
+
+                MessageBox.Show("Arquivo PDF gerado em" + arquivo);
+            }
+        }
+
+        private void txtNomeFuncionario_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
